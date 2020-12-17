@@ -1,16 +1,27 @@
 ## Detección de billetes
-14/12/2020
+17/12/2020
+
+Autores:
+
+        Francisco Abusleme
+        Juan Aguilera
+        Rodrigo Graves
+        Ricardo Mardones
+        Loreto Romero
 
 
-Por :   Juan Aguilera ,
-        Ricardo Mardones  
-
-
-####  Referencias: https://github.com/puigalex/deteccion-objetos-video
-
+####  Referencias:
+Repositorio usado para el entrenamiento de la red en la detección de billetes
+```
+https://github.com/puigalex/deteccion-objetos-video
+```
+Repositorio usado para unir nuestro webservice a una aplicación de android
+```
+https://github.com/delight-im/Android-AdvancedWebView
+```
 
 ### Instrucciones:
-Si no tiene conda, recomendamos descargar miniconda3 y añadirlo a su path, sino usar Anaconda Prompt para navegar en los ambientes virtuales.
+Si no tiene conda, recomendamos descargar miniconda3 y añadirlo a su path, sino desa añadirlo a su path puede usar Anaconda Prompt para navegar en los ambientes virtuales.
 
 link de descarga:
 ```
@@ -52,11 +63,11 @@ Peso funcional cpu: yolov3_ckpt_97.pth
 
 Peso funcional solo gpu: yolov3_ckpt_6.pth
 
-Agregamos este archivo a la carpeta checkpoints
+Agregamos este archivo a la carpeta flask-webservice/checkpoints
 
 Notamos que es necesario cambiar este valor en commons.py en las lineas 59 y 65 dependiendo de el peso escogido de la siguente forma:
 
-![Captura de el servidor web](/images_readme/pesos.png)
+![Captura de el servidor web](images_readme/pesos.png)
 
 ###### Ejecutar la siguiente linea de codigo para iniciar el webservice
 
@@ -73,10 +84,10 @@ ipconfig
 
 Esto nos dará la dirección (IPv4) al servidor que nos ayudará a ejecutar la detección de billetes.
 
+##### Nos conectamos desde el navegador webpreferido, ya sea en un computador o dispositivo movil y seleccionar un archivo deseado, luego hacemos click en upload para cargarlo al servidor.
+
 
 ![Captura de el servidor web](/images_readme/flaskservice.png)
-
-##### Nos conectamos desde el navegador webpreferido, ya sea en un computador o dispositivo movil y seleccionar un archivo deseado, luego hacemos click en upload para cargarlo al servidor.
 
 
 
@@ -86,19 +97,16 @@ Esto nos dará la dirección (IPv4) al servidor que nos ayudará a ejecutar la d
 
 # __App movil con reconocimiento de billetes!__
 
-Adicionalmente para implementar este webservice en una aplicación movil capaz de reconocimiento de billetes chilenos, clonamos el siguiente repositorio
-
-```
-https://github.com/mgks/Android-SmartWebView
-```
-Abrimos el proyecto en Android Studio y cambiamos en java/MainActivity la linea 128 por lo siguiente
+Adicionalmente para implementar este webservice en una aplicación movil capaz de reconocimiento de billetes chilenos Abrimos el proyecto disponible en la carpeta Android-SmartWebView-Master en Android Studio y cambiamos en java/MainActivity la linea 128 por lo siguiente
 ```
 private static String ASWV_URL          = "http://192.168.0.5:5000/";
 ```
-Donde la direccion http://192.168.0.5:5000/ corresponde a la direccion del webservice creado anteriormente.
+Donde la direccion http://192.168.0.5:5000/ corresponde a la dirección del webservice creado anteriormente.
 
-Como se ve a continuacion
+Como se ve a continuación
 
 ![Captura de el servidor web](/images_readme/AppMovil.png)
 
 Queda por implementar en esta aplicación el uso de la cámara.
+# __Entrena tus propios pesos!__
+Para entrenar la red
