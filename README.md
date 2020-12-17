@@ -121,6 +121,7 @@ Debes dirigirte a **train-bill-detection/config** y editar **custom.data** segun
 ```
 classes = 5
 ```
+Lo mimso para las lineas **611**, **697**, **784** del archivo **yolov3-custom.cfg** que se encuentra dentro de la misma carpeta.
 
 ## Poner las imagenes y archivos de metadata en las carpetar necesarias
 
