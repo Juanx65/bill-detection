@@ -110,19 +110,25 @@ Como se ve a continuación
 Queda por implementar en esta aplicación el uso de la cámara.
 # __Entrena tus propios pesos!__
 
-Ahora, si lo que quieres es entrenar un modelo con las clases que tu quieras,se puede entrenar un modelo propio modelo.
+Ahora, si lo que quieres es entrenar un modelo con las clases de billetes que tu quieras, puedes hacerlo siguiendo estas instrucciones.
 
 Deberas crear un amplio data-set con las fotos que utilizarás para el entrenamiento.
 
 Deberás etiquetar las imagenes con el formato .txt de Yolo darknet.
 
+## Cambiar la configuracion del modelo
+Debes dirigirte a **train-bill-detection/config** y editar **custom.data** segun la cantidad de clases que tengas, para los billetes chilenso contamos con 5 clases
+```
+classes = 5
+```
+
 ## Poner las imagenes y archivos de metadata en las carpetar necesarias
 
-Las imagenes etiquetadas tienen que estar en el directorio **data/custom/images** mientras que las etiquetas/metadata de las imagenes tienen que estar en **data/custom/labels**.
+Las imagenes etiquetadas tienen que estar en el directorio **trian-bill-detection/data/custom/images** mientras que las etiquetas/metadata de las imagenes tienen que estar en **trian-bill-detection/data/custom/labels**.
 Por cada imagen.jpg debe de existir un imagen.txt (metadata con el mismo nombre de la imagen)
 
 
-Se deben generar los archivos ```data/custom/valid.txt``` y ```data/custom/train.txt``` que contendrán la dirección donde se encuentran cada una de las imagenes. Estos  generarán automaticamente  con el siguiente comando (estando las imagenes ya dentro de ```data/custom/images```)
+Dentro de **train-bill-detection** se deben generar los archivos ```data/custom/valid.txt``` y ```data/custom/train.txt``` que contendrán la dirección donde se encuentran cada una de las imagenes. Estos  generarán automaticamente  con el siguiente comando (estando las imagenes ya dentro de ```data/custom/images```)
 ```
 python split_train_val.py
 ```
@@ -132,7 +138,7 @@ python split_train_val.py
 ```
 https://drive.google.com/drive/folders/1IorMOfyKyj8zoiSE2W01gzAYgcXLeqL1?usp=sharing
 ```
- Se deben guardar en una carpeta de nombre __weights__.
+ Se deben guardar dentro de train-bill-detection en una carpeta de nombre __weights__.
 
 ## Entrenar
 Para poner a entrenar el modelo se debe ejecutar la siguiente linea, el parámetro batch_size por defecto se ejecutará con un valor de 2 pero se puede modificar para trabajar con mas batches si su dispositivo lo permite.
