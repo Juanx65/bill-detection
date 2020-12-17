@@ -1,0 +1,14 @@
+<!DOCTYdPE html>
+<html>
+<head>
+	<title>My bill app result</title>
+</head>
+<body>
+	<h2>Prediction</h2>
+	<img src="{{url_for('static', filename=result ) }}" width="416" height="416" />
+	<h2>La cantidad presente en la imagen es: {{cant_total}}</h2>
+	<h2>En {{div_out}}: {{cant_out}}</h2>
+	<br><br>
+	<button onclick="goBack()">Go Back</button>
+	<script>function goBack(){window.history.back();}</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My bills App</title>
+</head>
+<body>
+	<h2>Upload the bill image</h2>
+
+	<form method="post" enctype=multipart/form-data>
+		<input type="file" name="file">
+
+		<br><br>
+
+		<label for="div_in"> <b>Divisa Entrada</b>  </label>
+		<select name="div_in" id="div_in">
+			<option value="CLP">CLP</option>
+			<option value="USD">USD </option>
+			<option value="EUR">EUR</option>
+			<option value="CNY">CNY</option>
+		</select>
+
+		<br><br>	
+
+		<label for="out"> <b>Divisa Salida</b>  </label>
+		<select name="out" id="out">
+			<option value="CLP">CLP</option>
+			<option value="USD">USD </option>
+			<option value="EUR">EUR</option>
+			<option value="CNY">CNY</option>
+		</select>
+
+		<br><br>
+
+		<input type="submit" value="Upload">
+	</form>
+
+
+</body>
+</html>
