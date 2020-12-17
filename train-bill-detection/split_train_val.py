@@ -15,10 +15,10 @@ random.shuffle(files)
 train = files[:int(len(files)*0.8)]
 val = files[int(len(files)*0.8):]
 
-with open('{}/train2.txt'.format(opt.directorio_destino), 'w') as f:
+with open('{}/train.txt'.format(opt.directorio_destino), 'w') as f:
     for item in train:
         f.write("{}/{} \n".format(path, item))
 
-with open('{}/valid2.txt'.format(opt.directorio_destino), 'w') as f:
+with open('{}/valid.txt'.format(opt.directorio_destino), 'w') as f:
     for item in val:
         f.write("{}/{} \n".format(path, item))
