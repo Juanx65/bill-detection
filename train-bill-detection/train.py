@@ -25,7 +25,7 @@ import torch.optim as optim
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--epochs", type=int, default=100, help="number of epochs")
-    parser.add_argument("--batch_size", type=int, default=0, help="size of each image batch")
+    parser.add_argument("--batch_size", type=int, default=8, help="size of each image batch")
     parser.add_argument("--gradient_accumulations", type=int, default=2, help="number of gradient accums before step")
     parser.add_argument("--model_def", type=str, default="config/yolov3.cfg", help="path to model definition file")
     parser.add_argument("--data_config", type=str, default="config/coco.data", help="path to data config file")
@@ -69,7 +69,7 @@ if __name__ == "__main__":
         dataset,
         batch_size=opt.batch_size,
         shuffle=True,
-        num_workers=opt.n_cpu,
+        num_workers=8,
         pin_memory=True,
         collate_fn=dataset.collate_fn,
     )
@@ -94,7 +94,13 @@ if __name__ == "__main__":
     ]
     precision_anterior = 0
     stop_condition = False
+
+
+
     for epoch in range(opt.epochs):
+
+        arch_precision = open("historial_precision.txt","a")
+
         if(stop_condition):
             print(f'Condición de stop alcanzada con precisión de validación {precision_anterior}')
             break
@@ -152,7 +158,7 @@ if __name__ == "__main__":
             model.seen += imgs.size(0)
 
         if(True):
-            
+
             print("\n---- Evaluating Model ----")
             # Evaluate the model on the validation set
             precision, recall, AP, f1, ap_class = evaluate(
@@ -164,14 +170,19 @@ if __name__ == "__main__":
                 img_size=opt.img_size,
                 batch_size=2,
             )
+
+            """
             if(precision_anterior > precision.mean()):
                 stop_condition = True
-            
+            """
+
             precision_anterior = precision.mean()
+
+            arch_precision.write("checkpoint" +str(epoch+ 71) + " tuvo precision de: " + str(precision_anterior)+ "\n")
+            arch_precision.close()
+
             print(f'Precisión de validación: {precision_anterior}')
-                
+
 
         if epoch % opt.checkpoint_interval == 0:
-            torch.save(model.state_dict(), f"checkpoints/yolov3_ckpt_%d.pth" % epoch)
-
-        
+            torch.save(model.state_dict(), f"checkpoints/yolov3_ckpt_%d.pth" % (epoch+71))

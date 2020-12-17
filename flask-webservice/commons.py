@@ -43,6 +43,8 @@ def convertir_divisas(cant_total,div_in,div_out):
                     "EUR":{ "CLP": 893.51, "USD": 1.22, "CNY": 7.96},
                     "CNY":{"CLP": 112.26 , "USD":0.15 ,"EUR": 0.13}
                     }
+
+
     if div_in != div_out:
         cant_out = round(cant_total*dicc_divisas[div_in][div_out],4)
     else:
@@ -54,15 +56,17 @@ def get_detection(img):
     dinero = list()
     dicc_clases = {"1kbill" : 1000, "2kbill": 2000, "5kbill": 5000, "10kbill": 10000, "20kbill": 20000}
 
+    color_class =  {"1kbill" : [71,164,33], "2kbill": [120,12,138], "5kbill": [234,92,129], "10kbill": [60,124,227], "20kbill": [250,119,43]}
+
     model_def="config/yolov3-custom.cfg"
     class_path="data/custom/classes.names"
-    weights_path="checkpoints/yolov3_ckpt_97.pth"
-    conf_thres=0.8
+    weights_path="checkpoints/yolov3_ckpt_96.pth"
+    conf_thres=0.87
     nms_thres=0.4
     batch_size=1
     n_cpu=0
     img_size=416
-    checkpoint_model="checkpoints/yolov3_ckpt_97.pth"
+    checkpoint_model="checkpoints/yolov3_ckpt_96.pth"
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("cuda" if torch.cuda.is_available() else "cpu")
@@ -77,7 +81,7 @@ def get_detection(img):
 
     frame = cv2.imdecode(np.fromstring(img, np.uint8), cv2.IMREAD_UNCHANGED)
 
-    colors = np.random.randint(0, 255, size=(len(classes), 3), dtype="uint8")
+    #colors = np.random.randint(0, 255, size=(len(classes), 3), dtype="uint8")
     #frame = cv2.resize(frame, (1280, 960), interpolation=cv2.INTER_CUBIC)
     #LA imagen viene en Blue, Green, Red y la convertimos a RGB que es la entrada que requiere el modelo
     RGBimg=Convertir_RGB(frame)
@@ -100,7 +104,7 @@ def get_detection(img):
                 box_w = x2 - x1
                 box_h = y2 - y1
                 dinero.append(classes[int(cls_pred)])
-                color = [int(c) for c in colors[int(cls_pred)]]
+                color = color_class[classes[int(cls_pred)]]
                 print("Se detectó {} en X1: {}, Y1: {}, X2: {}, Y2: {}".format(classes[int(cls_pred)], x1, y1, x2, y2))
                 frame = cv2.rectangle(frame, (x1, y1 + box_h), (x2, y1), color, 5)
                 cv2.putText(frame, classes[int(cls_pred)], (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 5)# Nombre de la clase detectada

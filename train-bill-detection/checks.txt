@@ -1,0 +1,12 @@
+checkpoint52 tuvo precision de: 0.8087015666669627
+checkpoint68 tuvo precision de: 0.8322262484722506
+checkpoint71 tuvo precision de: 0.8045770722172156
+checkpoint72 tuvo precision de: 0.8292251055968671
+checkpoint76 tuvo precision de: 0.8114500403101645
+checkpoint82 tuvo precision de: 0.828121945283085
+checkpoint83 tuvo precision de: 0.8478137952387887
+checkpoint87 tuvo precision de: 0.8530963491655618
+checkpoint90 tuvo precision de: 0.8159376431230381
+checkpoint94 tuvo precision de: 0.8489291772019358
+checkpoint96 tuvo precision de: 0.8068845820386752
+checkpoint101 tuvo precision de: 0.8339787553624198

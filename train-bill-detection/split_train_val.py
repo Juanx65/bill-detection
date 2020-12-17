@@ -12,8 +12,8 @@ path = opt.directorio_origen
 
 files = os.listdir(path)
 random.shuffle(files)
-train = files[:int(len(files)*0.9)]
-val = files[int(len(files)*0.9):]
+train = files[:int(len(files)*0.8)]
+val = files[int(len(files)*0.8):]
 
 with open('{}/train2.txt'.format(opt.directorio_destino), 'w') as f:
     for item in train:
