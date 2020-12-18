@@ -61,7 +61,9 @@ Donde:
 
 Peso funcional cpu: yolov3_ckpt_97.pth
 
-Peso funcional solo gpu: yolov3_ckpt_6.pth
+Peso funcional solo gpu: Todos los demas que se encuentran en la carpeta
+
+Esta carpeta también incluye el archivo __historial_precision.txt__ con el registro de la precisión 	de cada epoca del entrnamiento, asi como  el archivo __check.txt__ que indica los checkpoints que lograron una presición destacable (sobre 80%), para usarla como prueba.
 
 Agregamos este archivo a la carpeta flask-webservice/checkpoints
 

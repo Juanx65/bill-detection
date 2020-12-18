@@ -9,7 +9,7 @@ Los pasos a seguir para poder correr detección de objetos en el video de una we
 
 # Crear ambiente
 Para tener en orden nuestras paqueterias de python primero vamos a crear un ambiente llamado "deteccionobj" el cual tiene la version 3.6 de python
-``` 
+```
 conda create -n deteccionobj python=3.6
 ```
 
@@ -24,7 +24,7 @@ Estando dentro de nuestro ambiente vamos a instalar todas las paqueterias necesa
 pip install -r requirements.txt
 ```
 
-# Descargar los pesos del modelo entrenado 
+# Descargar los pesos del modelo entrenado
 Para poder correr el modelo de yolo tendremos que descargar los pesos de la red neuronal, los pesos son los valores que tienen todas las conexiones entre las neuronas de la red neuronal de YOLO, este tipo de modelos son computacionalmente muy pesados de entrenar desde cero por lo cual descargar el modelo pre entrenado es una buena opción.
 
 ```
@@ -36,7 +36,7 @@ Movemos los pesos descargados a la carpeta llamada weights
 mv yolov3.weights weights/
 ```
 
-# Correr el detector de objetos en video 
+# Correr el detector de objetos en video
 Por ultimo corremos este comando el cual activa la camara web para poder hacer deteccion de video sobre un video "en vivo"
 ```
 python deteccion_video.py
@@ -49,11 +49,11 @@ Si en vez de correr detección de objetos sobre la webcam lo que quieres es corr
 python deteccion_video.py --webcam 0 --directorio_video <directorio_al_video.mp4>
 ```
 
-# Entrenamiento 
+# Entrenamiento
 
 Ahora, si lo que quieres es entrenar un modelo con las clases que tu quieras y no utilizar las 80 clases que vienen por default podemos entrenar nuestro propio modelo. Estos son los pasos que deberás seguir:
 
-Primero deberás etiquetar las imagenes con el formato VOC, aqui tengo un video explicando como hacer este etiquetado: 
+Primero deberás etiquetar las imagenes con el formato VOC, aqui tengo un video explicando como hacer este etiquetado:
 
 Desde la carpeta config correremos el archivo create_custom_model para generar un archivo .cfg el cual contiene información sobre la red neuronal para correr las detecciones
 ```
