@@ -3,37 +3,77 @@
 <head>
 	<title>My bills App</title>
 </head>
-<body>
-	<h2>Upload the bill image</h2>
 
-	<form method="post" enctype=multipart/form-data>
-		<input type="file" name="file">
+<style>
+	body {
+		color: #0026ff;
+		font-family: sans-serif;
+		background-color: #000000;
+		text-align: justify;
+	}
 
-		<br><br>
+	img {
+		max-width: 20%;
+		display: inline-block;
+		margin: auto;
+	}
 
-		<label for="div_in"> <b>Divisa Entrada</b>  </label>
-		<select name="div_in" id="div_in">
-			<option value="CLP">CLP</option>
-			<option value="USD">USD </option>
-			<option value="EUR">EUR</option>
-			<option value="CNY">CNY</option>
-		</select>
+	#textbody {
+		max-width: 50em;
+		margin: 0 auto;
+		padding: 2em;
+		background-color: #f2f2f2;
+	}
 
-		<br><br>	
+</style>
 
-		<label for="out"> <b>Divisa Salida</b>  </label>
-		<select name="out" id="out">
-			<option value="CLP">CLP</option>
-			<option value="USD">USD </option>
-			<option value="EUR">EUR</option>
-			<option value="CNY">CNY</option>
-		</select>
+	<body >
+	<h2 > Upload the bill image</h2 >
 
-		<br><br>
+    <a href="#" class=""button">Galería</a>
 
-		<input type="submit" value="Upload">
-	</form>
+    <img src="menu.png">
+	<br> <br />
+
+	<img src="capturando.png">
+
+	<br> <br />
+	<img src="video.png">
+	<img src="foto.png">
+
+    <br> <br />
+	<img src="examinar.png">
+
+	<form method="post" enctype=multipart/form-data >
+	<input type="file" name="file" >
+
+	<br > <br >
+
+	<label for="div_in" > <b > Divisa Entrada</b > </label >
+	<select name="div_in" id="div_in" >
+	<option value="CLP" > CLP</option >
+	<option value="USD" > USD </option >
+	<option value="EUR" > EUR</option >
+	<option value="CNY" > CNY</option >
+	</select >
+
+	<br > <br >
+
+	<label for="out" > <b > Divisa Salida</b > </label >
+	<select name="out" id="out" >
+	<option value="CLP" > CLP</option >
+	<option value="USD" > USD </option >
+	<option value="EUR" > EUR</option >
+	<option value="CNY" > CNY</option >
+	</select >
+
+	<br > <br >
+
+    <img src="flecha.png">
+	<br> <br />
+	<input type="submit" value="Upload" >
+	</form >
 
 
-</body>
-</html>
+	</body >
+	</html >
