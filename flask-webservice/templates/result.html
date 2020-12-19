@@ -4,23 +4,33 @@
 	<title>My bill app result</title>
 	<style>
         body {
+            font-family: sans-serif;
             background: -webkit-linear-gradient(left, #2675db, #B9C6DC);
             background: -o-linear-gradient(right, #2675db, #B9C6DC);
             background: -moz-linear-gradient(right, #2675db, #B9C6DC);
             background: linear-gradient(to right, #2675db, #B9C6DC);
             background-color: #93B874;
         }
+        .caja {
+            font-family: sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            height: 25px;
+            width: 450px;
+            color: #000000;
+            background: #dbdfe3
+        }
 
 	</style>
 </head>
 <body>
-	<h2>Prediction</h2>
+	<h2>Conversor de divisas</h2>
 	<img src="{{url_for('static', filename=result ) }}" width="416" height="416" />
-	<h2>La cantidad presente en la imagen es: {{cant_total}}</h2>
-	<h2>En {{div_out}}: {{cant_out}}</h2>
+	<h2>La cantidad presente en la imagen es: <div class="caja">{{cant_total}}</div> </h2>
+	<h2>En: <div class="caja">{{div_out}} {{cant_out}}</div></h2>
 	<br><br>
 	<img src="flechaback.png">
 	<br>
-	<button onclick="goBack()">Go Back</button>
+	<button onclick="goBack()">Otra captura</button>
 	<script>function goBack(){window.history.back();}</script>
 </html>
