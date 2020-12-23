@@ -1,5 +1,5 @@
 ## Detección de billetes
-17/12/2020
+23/12/2020
 
 Autores:
 
@@ -49,6 +49,7 @@ pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.
 ```
 
 #### Instalar los requerimientos para el entorno virtual.
+Ejecutar el siguiente comando en el cmd dentro de la carpeta __bill-detection__ en el entorno virtual recién creado
 
 ```
 pip install -r requirements.txt

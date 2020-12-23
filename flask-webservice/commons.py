@@ -60,13 +60,13 @@ def get_detection(img):
 
     model_def="config/yolov3-custom.cfg"
     class_path="data/custom/classes.names"
-    weights_path="checkpoints/yolov3_ckpt_94.pth"
+    weights_path="checkpoints/yolov3_ckpt_97.pth"
     conf_thres=0.87
     nms_thres=0.4
     batch_size=1
     n_cpu=0
     img_size=416
-    checkpoint_model="checkpoints/yolov3_ckpt_94.pth"
+    checkpoint_model="checkpoints/yolov3_ckpt_97.pth"
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("cuda" if torch.cuda.is_available() else "cpu")
