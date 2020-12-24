@@ -107,8 +107,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 	static boolean ASWP_FUPLOAD             = SmartWebView.ASWP_FUPLOAD;
 	static boolean ASWP_CAMUPLOAD           = SmartWebView.ASWP_CAMUPLOAD;
 	static boolean ASWP_ONLYCAM             = SmartWebView.ASWP_ONLYCAM;
-	static boolean ASWP_MULFILE             = SmartWebView.ASWP_MULFILE;
-	static boolean ASWP_LOCATION            = SmartWebView.ASWP_LOCATION;
+	static boolean ASWP_MULFILE             = true;//SmartWebView.ASWP_MULFILE;
+	static boolean ASWP_LOCATION            = false;//SmartWebView.ASWP_LOCATION;
 	static boolean ASWP_RATINGS             = SmartWebView.ASWP_RATINGS;
 	static boolean ASWP_PULLFRESH           = SmartWebView.ASWP_PULLFRESH;
 	static boolean ASWP_PBAR                = SmartWebView.ASWP_PBAR;
@@ -125,13 +125,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 	static boolean ASWP_CERT_VERIFICATION   = SmartWebView.ASWP_CERT_VERI;
 
 	// configuration variables
-	private static String ASWV_URL          = "http://192.168.0.5:5000/";//SmartWebView.ASWV_URL;
+	private static String ASWV_URL          = "http://192.168.1.98:5000/";//SmartWebView.ASWV_URL;
 	private String CURR_URL                 = ASWV_URL;
 	private static String ASWV_SEARCH       = SmartWebView.ASWV_SEARCH;
 	private static String ASWV_SHARE_URL    = SmartWebView.ASWV_SHARE_URL;
 	private static String ASWV_EXC_LIST     = SmartWebView.ASWV_EXC_LIST;
 
-	private static String ASWV_F_TYPE       = SmartWebView.ASWV_F_TYPE;
+	private static String ASWV_F_TYPE       = "image/*";//SmartWebView.ASWV_F_TYPE;
 
 	private static String ASWV_ADMOB        = SmartWebView.ASWV_ADMOB;
 
