@@ -1,2 +1,3 @@
 snapshots/**
 dataset/images/*.jpg
+*.h5
