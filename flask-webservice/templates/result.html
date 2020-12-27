@@ -24,13 +24,29 @@
 	</style>
 </head>
 <body>
-	<h2>Conversor de divisas</h2>
-	<img src="{{url_for('static', filename=result ) }}" width="416" height="416" />
-	<h2>La cantidad presente en la imagen es: <div class="caja">{{div_in}} {{cant_total}}</div> </h2>
-	<h2>En: <div class="caja">{{div_out}} {{cant_out}}</div></h2>
-	<br><br>
-	<img src="flechaback.png">
-	<br>
-	<button onclick="goBack()">Otra captura</button>
-	<script>function goBack(){window.history.back();}</script>
+    <h2>Conversor de divisas</h2>
+    <img src="{{url_for('static', filename=result ) }}" width="416" height="416" />
+    <h2>La cantidad presente en la imagen es: <div class="caja">{{div_in}} {{cant_total}}</div> </h2>
+    <h2>En la divisa de salida seleccionada: <div class="caja">{{div_out}} {{cant_out}}</div></h2>
+
+    <form method="post" enctype=multipart/form-data >
+    <label for="out"> <b> Elegir otra </b> </label>
+    <select name="out" id="out">
+        <option value="CLP"> CLP</option>
+        <option value="USD"> USD </option>
+        <option value="EUR"> EUR</option>
+        <option value="CNY"> CNY</option>
+    </select>
+
+    <input type="submit" value=">>" >
+
+    </form >
+
+    <br><br>
+    <img src="flechaback.png">
+    <br>
+    <button onclick="goBack()">Otra captura</button>
+    <script>function goBack(){window.history.back();}</script>
+
+
 </html>
