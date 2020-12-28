@@ -13,12 +13,9 @@ def predict():
 
 	if request.method=='GET':
 		img1 = os.path.join(app.config['UPLOAD_FOLDER'],'capturando.png')
-		return render_template('index.html',user_image=img1)
+		return render_template('index.html', user_image = img1)
 
 	if request.method=='POST':
-		for uploaded_file in request.files.getlist('file'):
-			if uploaded_file.filename != '':
-				uploaded_file.save(uploaded_file.filename)
 		if 'file' not in request.files:
 			print('file not uploaded')
 			return
