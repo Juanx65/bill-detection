@@ -3,83 +3,111 @@
 <head>
 	<title>My bills App</title>
 
-<style>
-	body {
-		color: #0026ff;
-		font-family: sans-serif;
-		background-color: #000000;
-		text-align: justify;
-	}
+	<style>
+		body {
+			color: #0026ff;
+			font-family: sans-serif;
+			background-color: #000000;
+			text-align: justify;
+		}
 
-	img {
-		max-width: 20%;
-		display: inline-block;
-		margin: auto;
-	}
+		img {
+			max-width: 20%;
+			display: inline-block;
+			margin: auto;
+		}
 
-	#textbody {
-		max-width: 50em;
-		margin: 0 auto;
-		padding: 2em;
-		background-color: #f2f2f2;
-	}
+		#textbody {
+			max-width: 50em;
+			margin: 0 auto;
+			padding: 2em;
+			background-color: #f2f2f2;
+		}
 
-</style>
+		button {
+			background: #000000;
+			border: none;
+			font-size: 50px;
+			border-radius: 100px;
+			color: white;
+		}
+
+        .letra {
+            color: white;
+            font-size: small;
+        }
+	</style>
+	<script src="https://kit.fontawesome.com/f0dfbd1425.js" crossorigin="anonymous"></script>
+
 </head>
 
-	<body >
-	<h2 > Upload the bill image</h2 >
+<body>
+	<h2> Upload the bill image</h2>
 
-    <a href="#" class= "button"> Galeria</a>
-    
+	<a href="#" class="button"> Galeria</a>
 
-    <img src="menu.png">
+
+	<button>
+		<i class="fas fa-bars"></i>
+	</button>
 	<br> <br />
 
-    <img src="{{user_image}}">
+	<img src="{{user_image}}">
 
 	<br> <br />
-	<img src="video.png">
-	<img src="foto.png">
 
-    <br> <br />
+	<button>
+		<i class="fas fa-camera"></i>
+	</button>
 
-	<form method="post" enctype=multipart/form-data >
-	<input type="file" name="file" accept="image/*" capture= "camera">
-	
-	<br> <br/>
+	<button>
+		<i class="fas fa-video"></i>
+	</button>
 
-	<label class="cameraButton">Take a picture
-    <input type="file" name="file" accept="image/*" capture="camera">
-  	</label>
-
-	<br > <br >
-
-	<label for="div_in" > <b > Divisa Entrada</b > </label >
-	<select name="div_in" id="div_in" >
-	<option value="CLP" > CLP</option >
-	<option value="USD" > USD </option >
-	<option value="EUR" > EUR</option >
-	<option value="CNY" > CNY</option >
-	</select >
-
-	<br > <br >
-
-	<label for="out" > <b > Divisa Salida</b > </label >
-	<select name="out" id="out" >
-	<option value="CLP" > CLP</option >
-	<option value="USD" > USD </option >
-	<option value="EUR" > EUR</option >
-	<option value="CNY" > CNY</option >
-	</select >
-
-	<br > <br >
-
-    <img src="flecha.png">
 	<br> <br />
-	<input type="submit" value="Upload" >
-	</form >
+
+	<form method="post" enctype=multipart/form-data>
+		
+		<input type="file" name="file" accept="image/*" capture="camera">
+
+		<br> <br />
+
+		Take a picture
+		<input type="file" name="file" accept="image/*" capture="camera">
+
+		<br> <br>
+
+		<label for="div_in"> <b> Divisa Entrada</b> </label>
+		<select name="div_in" id="div_in">
+			<option value="CLP"> CLP</option>
+			<option value="USD"> USD </option>
+			<option value="EUR"> EUR</option>
+			<option value="CNY"> CNY</option>
+		</select>
+
+		<br> <br>
+
+		<label for="out"> <b> Divisa Salida</b> </label>
+		<select name="out" id="out">
+			<option value="CLP"> CLP</option>
+			<option value="USD"> USD </option>
+			<option value="EUR"> EUR</option>
+			<option value="CNY"> CNY</option>
+		</select>
+
+		<br> <br>
+
+		<button type="submit" value="Upload">
+			<i class="fas fa-arrow-circle-right"></i>
+		</button>
+
+		<br>
+		<a class="letra">
+			<b>Upload capt</b>
+		</a>
+
+	</form>
 
 
-	</body >
+</body>
 	</html >
