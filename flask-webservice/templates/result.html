@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>My bill app result</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My bill app result</title>
 	<style>
         body {
             font-family: sans-serif;
@@ -20,8 +23,20 @@
             color: #000000;
             background: #dbdfe3
         }
+        button {
+            background: #2675db;
+            border: none;
+            font-size: 50px;
+            border-radius: 100px;
+            color: white;
+        }
+        .letra {
+            color: white;
+            font-size:small;
+        }
 
 	</style>
+    <script src="https://kit.fontawesome.com/f0dfbd1425.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h2>Conversor de divisas</h2>
@@ -43,10 +58,18 @@
     </form >
 
     <br><br>
-    <img src="flechaback.png">
+ 
     <br>
-    <button onclick="goBack()">Otra captura</button>
+    
+    <button onclick="goBack()">
+        <i class="fas fa-arrow-circle-left"></i>
+    </button>
     <script>function goBack(){window.history.back();}</script>
+
+    <br>
+    <a class="letra">
+        <b>Otra captura</b>
+    </a>
 
 </body>
 </html>
