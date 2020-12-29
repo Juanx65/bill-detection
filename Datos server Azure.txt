@@ -1,0 +1,17 @@
+Datos para monitorear desde conexión ssh el entrenamiento del modelo Retinanet en servidor Remoto provisto por Azure Microsoft
+
+
+
+ip Host:  70.37.96.71
+User   :  Ricardo
+Pass   : Request to ricardo.mardones@sansano.usm.cl
+
+
+Ejecutar linea: tmux attach -t 1
+
+
+
+
+
+
+
