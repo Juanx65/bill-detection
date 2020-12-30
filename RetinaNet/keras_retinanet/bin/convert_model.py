@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env Retinanet
 
 """
 Copyright 2017-2018 Fizyr (https://fizyr.com)
@@ -36,8 +36,8 @@ from ..utils.tf_version import check_tf_version
 def parse_args(args):
     parser = argparse.ArgumentParser(description='Script for converting a training model to an inference model.')
 
-    parser.add_argument('model_in', help='The model to convert.')
-    parser.add_argument('model_out', help='Path to save the converted model to.')
+    #parser.add_argument('model_in', help='The model to convert.')
+    #parser.add_argument('model_out', help='Path to save the converted model to.')
     parser.add_argument('--backbone', help='The backbone of the model to convert.', default='resnet50')
     parser.add_argument('--no-nms', help='Disables non maximum suppression.', dest='nms', action='store_false')
     parser.add_argument('--no-class-specific-filter', help='Disables class specific filtering.', dest='class_specific_filter', action='store_false')
@@ -74,7 +74,7 @@ def main(args=None):
             pyramid_levels = parse_pyramid_levels(args.config)
 
     # load the model
-    model = models.load_model(args.model_in, backbone_name=args.backbone)
+    model = models.load_model("resnet50_csv_15.h5", backbone_name=args.backbone)
 
     # check if this is indeed a training model
     models.check_training_model(model)
@@ -93,7 +93,7 @@ def main(args=None):
     )
 
     # save model
-    model.save(args.model_out)
+    model.save("inference.h5")
 
 
 if __name__ == '__main__':

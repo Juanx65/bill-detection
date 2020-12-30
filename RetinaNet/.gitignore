@@ -1,3 +1,4 @@
 snapshots/**
 dataset/images/*.jpg
+keras_retinanet/bin/*.h5
 *.h5

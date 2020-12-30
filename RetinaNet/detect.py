@@ -21,7 +21,7 @@ def get_session():
 
 tf.compat.v1.keras.backend.set_session(get_session)
 
-model_path = '/mnt/c/Users/ricar/Desktop/PDI/bill-detection/RetinaNet/snapshots/resnet50_csv_05.h5'   ## replace this with your model path
+model_path = '/mnt/c/Users/ricar/Desktop/PDI/bill-detection/RetinaNet/snapshots/inference.h5'   ## replace this with your model path
 model = models.load_model(model_path, backbone_name='resnet50')
 
 labels_to_names = {0: '1kbill', 1:'2kbill', 2:'5kbill', 3:'10kbill',4: '20kbill'}                    ## replace with your model labels and its index value
@@ -49,7 +49,7 @@ def detection_on_image(image_path):
             caption = "{} {:.3f}".format(labels_to_names[label], score)
             draw_caption(draw, b, caption)
         detected_img =cv2.cvtColor(draw, cv2.COLOR_RGB2BGR)
-        #cv2.imwrite(output_path, detected_img)
-        cv2.imshow('Detection',detected_img)
+        cv2.imwrite("test_convert.jpg", detected_img)
+        #cv2.imshow('Detection',detected_img)
         cv2.waitKey(0)
 detection_on_image(image_path)
