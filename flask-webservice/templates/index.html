@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
 	<title>My bills App</title>
-
+	<meta charset="utf-8">
 	<style>
 		body {
 			color: #0026ff;
@@ -10,53 +10,146 @@
 			background-color: #000000;
 			text-align: justify;
 		}
-
 		img {
 			width: 416px;
 			height: 416px;
 			display: inline-block;
 			margin: auto;
 		}
-
 		#textbody {
-			max-width: 50em;
-			margin: 0 auto;
-			padding: 2em;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
 			background-color: #f2f2f2;
 		}
-
-		button {
-			background: #000000;
-			border: none;
-			font-size: 50px;
-			border-radius: 100px;
-			color: white;
-			align : right;
+        button {
+            background: #000000;
+            border: none;
+            font-size: 50px;
+            border-radius: 100px;
+            color: white;
+            cursor: pointer;
+        }
+        .menu-container {
+            position: absolute;
+            top: 6%;
+            right: 10%;
+            display: flex;
+			width: auto;
+			align-items: center;
+			justify-content:center;
+        }
+        .button {
+            position: relative;
+            background: #000000;
+            font-size: 50px;
+            border-radius: 100px;
+            color: white;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            justify-content: space-between;
+        }
+        ul {
+            list-style: none;
+            position:absolute;
+            top: 55px;
+			right: 10px;
+            display: block;
+            background: #060e46;
+            width: 170%;
+            text-align: center;
+            border-radius: 5px;
+            display: none;
+            box-shadow: 0 3px 6px #060e46;
+        }
+		ul:before{
+			position: absolute;
+			content: '';
+			width: 20px;
+			height: 20px;
+			background: #1b1b1b;
+			top: -10px;
+			transform: rotate(45deg);
+			z-index: -1;
+			}
+		ul li{
+			line-height: 35px;
+			padding: 8px 20px;
+			cursor: pointer;
+			border: 1px solid transparent;
+			border-bottom: 1px solid rgba(255,255,255,.1);
 		}
-
-        .letra {
-            color: white;
-            font-size: medium;
-        }
-        .image-upload {
-            color: white;
-            font-size: 40px;
-        }
-
+		ul li:last-child{
+			border-bottom: none;
+		}
+		ul li:hover{
+			box-shadow: inset 0 0 5px #33ffff,
+                        inset 0 0 5px #66ffff;
+		}
+		ul li:hover:first-child{
+			border-radius: 5px 5px 0 0;
+		}
+		ul li:hover:last-child{
+			border-radius: 0 0 5px 5px;
+		}
+		ul li a{
+			color: white;
+			font-size: 16px;
+			text-decoration: none;
+		}
+		ul li:hover a{
+			color: #18DADA;
+		}
+		.letra {
+			color: white;
+			font-size: medium;
+		}
+		.image-upload {
+			color: white;
+			font-size: 40px;
+		}
 	</style>
 	<script src="https://kit.fontawesome.com/f0dfbd1425.js" crossorigin="anonymous"></script>
-
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 
 <body>
 	<h2> Upload the bill image</h2>
 
-	<a href="#" class="button"> Galeria</a>
+	<!-- 
+	<a href="#" class="button2"> Galeria</a> 
+	-->
 
+	<div class="menu-container">
+		<div class="button">
+			<span class="fas fa-bars"></span>
+		</div>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$('.button').click(function(){
+				if($(this).hasClass('expand')){
+					$('ul').slideUp(function(){
+						$('.button').removeClass('expand');
+					});
+				}else{
+					$(this).addClass('expand');
+					setTimeout(function(){
+						$('.fas').addClass('expand');
+						$('ul').stop().slideDown();
+					},200);
+				}
+			});
+		});
+	</script>
 
-	<button style="text-align: right;width:366px">
-		<i class="fas fa-bars"></i>
-	</button>
 	<br> <br />
 
 	<img src="{{user_image}}">
@@ -65,21 +158,21 @@
 	<br> <br />
 
 	<form method="post" enctype=multipart/form-data>
-		
+
 		<div class="image-upload">
 			<label for="file-input1">
 				<i class="fas fa-camera"></i>
 			</label>
-		    <input id="file-input1" type="file" name="file" accept="image/*" capture="camera" />
+			<input id="file-input1" type="file" name="file" accept="image/*" capture="camera" />
 		</div>
 
 		<div class="image-upload">
 			<label for="file-input2">
 				<i class="fas fa-video"></i>
 			</label>
-		    <label class="cameraButton">
-		        <input id="file-input2" type="file" name="file" accept="image/*" capture="camera" />
-		    </label>
+			<label class="cameraButton">
+				<input id="file-input2" type="file" name="file" accept="image/*" capture="camera" />
+			</label>
 		</div>
 
 		<br> <br>
@@ -102,7 +195,7 @@
 			<option value="CNY"> CNY</option>
 		</select>
 
-		<br> <br> <br/>
+		<br> <br> <br />
 
 		<button type="submit" value="Upload">
 			<i class="fas fa-arrow-circle-right"></i>
