@@ -109,6 +109,7 @@
 		.image-upload {
 			color: white;
 			font-size: 40px;
+			cursor: pointer;
 		}
 	</style>
 	<script src="https://kit.fontawesome.com/f0dfbd1425.js" crossorigin="anonymous"></script>
@@ -126,11 +127,13 @@
 		<div class="button">
 			<span class="fas fa-bars"></span>
 		</div>
+		<nav>
 		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact</a></li>
+			<li><a href="#">English</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
 		</ul>
+		</nav>
 	</div>
 	<script>
 		$(document).ready(function(){
@@ -157,7 +160,7 @@
 
 	<br> <br />
 
-	<form method="post" enctype=multipart/form-data>
+	<form action="{{ url_for('predict') }}" method="post" enctype=multipart/form-data>
 
 		<div class="image-upload">
 			<label for="file-input1">

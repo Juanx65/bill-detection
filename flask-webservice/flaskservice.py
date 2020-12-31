@@ -26,11 +26,11 @@ def predict():
 		try:
 			result, cant_total = get_detection(image)
 		except:
-			return render_template('handler.html',error = "can't upload image" )
+			return render_template('handler.html',error = "Can't upload image" )
 
 		cant_out = convertir_divisas(cant_total,div_in,div_out)
+		
 		return render_template('result.html',result = result,cant_total = cant_total,div_out = div_out, cant_out = cant_out, div_in = div_in)
-
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')#host='0.0.0.0'
