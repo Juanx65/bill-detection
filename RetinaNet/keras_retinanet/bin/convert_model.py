@@ -74,7 +74,11 @@ def main(args=None):
             pyramid_levels = parse_pyramid_levels(args.config)
 
     # load the model
+<<<<<<< Updated upstream
     model = models.load_model("resnet50_csv_38.h5", backbone_name=args.backbone)
+=======
+    model = models.load_model("resnet50_csv_30.h5", backbone_name=args.backbone)
+>>>>>>> Stashed changes
 
     # check if this is indeed a training model
     models.check_training_model(model)
@@ -93,7 +97,11 @@ def main(args=None):
     )
 
     # save model
+<<<<<<< Updated upstream
     model.save("inference_38.h5")
+=======
+    model.save("inference_30.h5")
+>>>>>>> Stashed changes
 
 
 if __name__ == '__main__':

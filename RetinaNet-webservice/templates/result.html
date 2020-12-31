@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My bill app result</title>
+	<style>
+        body {
+            font-family: sans-serif;
+            background: -webkit-linear-gradient(left, #2675db, #B9C6DC);
+            background: -o-linear-gradient(right, #2675db, #B9C6DC);
+            background: -moz-linear-gradient(right, #2675db, #B9C6DC);
+            background: linear-gradient(to right, #2675db, #B9C6DC);
+            background-color: #93B874;
+        }
+        .caja {
+            font-family: sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            height: 25px;
+            width: 416px;
+            color: #000000;
+            background: #dbdfe3
+        }
+        button {
+            background: transparent;
+            border: none;
+            font-size: 50px;
+            border-radius: 100px;
+            color: white;
+            cursor: pointer;
+        }
+        .letra {
+            color: white;
+            font-size: medium;
+        }
+
+	</style>
+    <script src="https://kit.fontawesome.com/f0dfbd1425.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2>Conversor de divisas</h2>
+    <img name="resultado" src="{{url_for('static', filename=result ) }}" width="416" height="416" />
+    <h3>La cantidad presente en la imagen es:</h3> <div class="caja">{{div_in}} {{cant_total}}</div>
+    <h3>En la divisa de salida seleccionada:</h3> <div class="caja">{{div_out}} {{cant_out}}</div>
+    
+   
+
+    <br> <br> <br>
+    
+    <button onclick="goBack()">
+        <i class="fas fa-arrow-circle-left"></i>
+    </button>
+    <script>function goBack(){window.history.back();}</script>
+
+    <br>
+    <a class="letra">
+        <b>New capt</b>
+    </a>
+
+</body>
+</html>

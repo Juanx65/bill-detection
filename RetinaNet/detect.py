@@ -22,20 +22,32 @@ def get_session():
 
 tf.compat.v1.keras.backend.set_session(get_session)
 
+<<<<<<< Updated upstream
 model_path = 'inference_30.h5'   ## replace this with your model path
+=======
+model_path = 'models/inference_30.h5'   ## replace this with your model path
+>>>>>>> Stashed changes
 #model_path = '/mnt/c/Users/ricar/Desktop'
 model = models.load_model(model_path, backbone_name='resnet50')
 
 labels_to_names = {0: '1kbill', 1:'2kbill', 2:'5kbill', 3:'10kbill',4: '20kbill'}                    ## replace with your model labels and its index value
 
+<<<<<<< Updated upstream
 image_path = 'prueba.jpeg'## replace with input image path
+=======
+image_path = 'images/j10.jpg'## replace with input image path
+>>>>>>> Stashed changes
 #image_path = '/mnt/c/Users/ricar/Desktop/ale/juan_ssd.jpeg'  ## replace with input image path
 #output_path = 'C:\\Users\\Samjith.CP\\Desktop\\detected_image.jpg'   ## replace with output image path
 
 color_class =  {0 : [71,164,33], 1: [120,12,138], 2: [234,92,129], 3: [60,124,227],4:[250,119,43]}
 
 def solapadas(b1,b2):
+<<<<<<< Updated upstream
     if(abs(b1[0]-b2[0])<50 and abs(b1[1]-b2[1])<50):
+=======
+    if(abs(b1[0]-b2[0])/(b1[0]+0.01)<0.1 and abs(b1[1]-b2[1])/(b1[1]+0.01)<0.1):
+>>>>>>> Stashed changes
         return(True)
     return(False)
 
@@ -49,6 +61,10 @@ def detection_on_image(image_path):
         image, scale = resize_image(image)
         boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
         boxes /= scale
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
         validos = []
         for box, score, label in zip(boxes[0], scores[0], labels[0]):
             if score < SCORE:
@@ -68,6 +84,10 @@ def detection_on_image(image_path):
                         finales.remove((box2,score2,label2))
             if(agregar):
                 finales.append((box1,score1,label1))
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
         for box, score, label in finales:
 
             color = color_class[label]
@@ -88,4 +108,8 @@ def detection_on_image(image_path):
 
         #cv2.imshow('Detection',detected_img)
         cv2.waitKey(0)
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 detection_on_image(image_path)

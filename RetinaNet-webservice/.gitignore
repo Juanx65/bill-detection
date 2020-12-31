@@ -1,0 +1,3 @@
+static/*.jpg
+models/*.h5
+keras_retinanet/bin/*.h5
