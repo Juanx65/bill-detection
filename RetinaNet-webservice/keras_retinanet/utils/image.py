@@ -177,7 +177,7 @@ def compute_resize_scale(image_shape, min_side=800, max_side=1333):
     return scale
 
 
-def resize_image(img, min_side=800, max_side=1333):
+def resize_image(img, min_side=768, max_side=1024):
     """ Resize an image such that the size is constrained to min_side and max_side.
 
     Args

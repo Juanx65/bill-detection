@@ -74,7 +74,7 @@ def main(args=None):
             pyramid_levels = parse_pyramid_levels(args.config)
 
     # load the model
-    model = models.load_model("resnet50_csv_30.h5", backbone_name=args.backbone)
+    model = models.load_model("resnet50_csv_37.h5", backbone_name=args.backbone)
 
     # check if this is indeed a training model
     models.check_training_model(model)
@@ -93,7 +93,7 @@ def main(args=None):
     )
 
     # save model
-    model.save("inference_30.h5")
+    model.save("inference_37.h5")
 
 
 if __name__ == '__main__':

@@ -64,13 +64,13 @@ def detection_on_image(img):
 
         tf.compat.v1.keras.backend.set_session(get_session)
 
-        SCORE = 0.75
+        SCORE = 0.6
 
         color_class =  {0 : [71,164,33], 1: [120,12,138], 2: [234,92,129], 3: [60,124,227],4:[250,119,43]}
         labels_to_names = {0: '1kbill', 1:'2kbill', 2:'5kbill', 3:'10kbill',4: '20kbill'}
         dicc_clases = {0: 1000, 1: 2000, 2: 5000, 3: 10000, 4: 20000}
 
-        model_path = '/mnt/c/Users/juan_/Desktop/PDI_git/bill-detection/RetinaNet/models/inference_30.h5'
+        model_path = '/mnt/c/Users/juan_/Desktop/PDI_git/bill-detection/RetinaNet-webservice/models/inference_37.h5'
         model = models.load_model(model_path, backbone_name='resnet50')
 
         dinero = list()
@@ -78,7 +78,7 @@ def detection_on_image(img):
         image = cv2.imdecode(np.fromstring(img, np.uint8), cv2.IMREAD_UNCHANGED)
         draw = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         image = preprocess_image(image)
-        image, scale = resize_image(image)
+        image, scale = resize_image(image)#,768,1024) #resize_image(img, min_side=768, max_side=1024):
         boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
         boxes /= scale
 
