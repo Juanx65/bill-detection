@@ -1,4 +1,5 @@
 snapshots/**
 dataset/images/*.jpg
 keras_retinanet/bin/*.h5
+models/*.h5
 *.h5
