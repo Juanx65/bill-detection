@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html>
-	<head><title>ERROR HANDLER</title></head>
-	<body>
-		<h2> ERROR DETECTED </h2>
+<head>
+	<title>ERROR HANDLER</title>
+	<style>
+	body {
+	font-family: sans-serif;
+	background: -webkit-linear-gradient(left, #570d0d, #d07d84);
+	background: -o-linear-gradient(right, #570d0d, #d07d84);
+	background: -moz-linear-gradient(right, #570d0d, #d07d84);
+	background: linear-gradient(to right, #570d0d, #d07d84);
+	background-color: #93B874;
+	}
+	.caja {
+	font-family: sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	height: 100px;
+	width: 450px;
+	color: #43413d;
+	background: #e7dbc3
+	}
+        button {
+            background: transparent; 
+            border: none;
+            font-size: 50px;
+            border-radius: 100px;
+            color: white;
+            cursor: pointer;
+        }
+        .letra {
+            color: white;
+            font-size: medium;
+        }
+	</style>
+    <script src="https://kit.fontawesome.com/f0dfbd1425.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<h2> ERROR DETECTED </h2>
+	<div class="caja">
 		<p> Error: {{ error }} </p>
-		<br><br>
-		<button onclick="goBack()" > Go back </button>
-		<script>function goBack(){window.history.back();}</script>
-	</body>
+	</div>
+	<br><br>
+	<button onclick="goBack()">
+		<i class="fas fa-arrow-circle-left"></i>
+	</button>
+	<script>function goBack(){window.history.back();}</script>
+	<br>
+	<a class="letra">
+		<b>Go back</b>
+	</a>
+</body>
 </html>
 
 
