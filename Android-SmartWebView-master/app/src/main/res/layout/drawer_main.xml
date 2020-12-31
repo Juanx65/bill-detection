@@ -25,7 +25,7 @@
 		android:layout_alignParentLeft="true"
 		android:layout_alignParentStart="true"
 		android:layout_alignParentTop="true"
-		android:background="@color/colorPrimary"
+		android:background= "#000000"> <!-- @color/colorPrimary-->
 		android:gravity="center_vertical|center_horizontal|center"
 		android:visibility="visible"
 		tools:ignore="RtlHardcoded">
