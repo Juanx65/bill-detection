@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ABOUT APP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            font-family: sans-serif;
+            background: -webkit-linear-gradient(left, #2e0564, #a889fb);
+            background: -o-linear-gradient(right, #2e0564, #a889fb);
+            background: -moz-linear-gradient(right, #2e0564, #a889fb);
+            background: linear-gradient(to right, #2e0564, #a889fb);
+            background-color: #93B874;
+        }
+
+        .caja {
+            font-family: sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            text-align: center;
+            width: 416px;
+            padding-top: 5px;
+            height: 416px;
+            color: #43413d;
+            background: #e7dbc3
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            font-size: 50px;
+            border-radius: 100px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .letra {
+            color: white;
+            font-size: medium;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/f0dfbd1425.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h2> ABOUT APP </h2>
+    <div class="caja">
+        <p>
+            Esta aplicaci&oacute;n se encarga de hacer una detecci&oacute;n de billetes a partir de una imagen de entrada,
+            seleccionada desde la galer&iacute;a de fotos u obtenida directamente desde la c&aacute;mara del
+            dispositivo m&oacute;vil, para lo cual se debe ingresar la unidad monetaria de entrada y la de salida.
+            De manera eficiente y r&aacute;pida, retorna el valor del monto total de dinero presente en la captura
+            en el formato requerido.
+
+            Luego, si se desea cambiar la divisa de salida, basta con volver atr&aacute;s y cambiar la elecci&oacute;n, o bien,
+            se puede hacer una nueva captura para leer.
+        </p>
+        <p>
+            Para conocer m&aacute;s acerca del procesamiento detr&aacute;s, puede visitar el sitio del repositorio:
+
+        </p>
+    </div>
+    <br><br>
+    <button onclick="goBack()">
+        <i class="fas fa-arrow-circle-left"></i>
+    </button>
+    <script>function goBack(){window.history.back();}</script>
+    <br>
+    <a class="letra">
+        <b>Go back</b>
+    </a>
+</body>
+</html>

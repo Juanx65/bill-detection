@@ -32,5 +32,13 @@ def predict():
 		
 		return render_template('result.html',result = result,cant_total = cant_total,div_out = div_out, cant_out = cant_out, div_in = div_in)
 
+@app.route('/aboutapp.html', methods=['GET'])
+def aboutapp():
+    return render_template('aboutapp.html')
+
+@app.route('/contact.html', methods=['GET'])
+def contact():
+    return render_template('contact.html')
+
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')#host='0.0.0.0'
