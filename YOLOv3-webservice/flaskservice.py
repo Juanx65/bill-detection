@@ -29,7 +29,7 @@ def predict():
 			return render_template('handler.html',error = "Can't upload image" )
 
 		cant_out = convertir_divisas(cant_total,div_in,div_out)
-		
+
 		return render_template('result.html',result = result,cant_total = cant_total,div_out = div_out, cant_out = cant_out, div_in = div_in)
 
 @app.route('/aboutapp.html', methods=['GET'])
@@ -41,4 +41,4 @@ def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0')#host='0.0.0.0'
+	app.run(debug=True)#host='0.0.0.0'

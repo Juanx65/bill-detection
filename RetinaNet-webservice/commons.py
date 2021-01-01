@@ -70,7 +70,8 @@ def detection_on_image(img):
         labels_to_names = {0: '1kbill', 1:'2kbill', 2:'5kbill', 3:'10kbill',4: '20kbill'}
         dicc_clases = {0: 1000, 1: 2000, 2: 5000, 3: 10000, 4: 20000}
 
-        model_path = '/mnt/c/Users/juan_/Desktop/PDI_git/bill-detection/RetinaNet-webservice/models/inference_37.h5'
+        #model_path = '/mnt/c/Users/juan_/Desktop/PDI_git/bill-detection/RetinaNet-webservice/models/inference_37.h5' //JUAN
+        model_path = "/mnt/c/Users/ricar/Desktop/PDI/bill-detection/RetinaNet-webservice/models/inference_37.h5"
         model = models.load_model(model_path, backbone_name='resnet50')
 
         dinero = list()
