@@ -64,7 +64,7 @@ def detection_on_image(img):
 
         tf.compat.v1.keras.backend.set_session(get_session)
 
-        SCORE = 0.6
+        SCORE = 0.7
 
         color_class =  {0 : [71,164,33], 1: [120,12,138], 2: [234,92,129], 3: [60,124,227],4:[250,119,43]}
         labels_to_names = {0: '1kbill', 1:'2kbill', 2:'5kbill', 3:'10kbill',4: '20kbill'}
@@ -115,6 +115,7 @@ def detection_on_image(img):
             draw_box(draw, b, color=color)
             cv2.putText(draw, labels_to_names[label] + "  "+  str(round(score,3)), (b[0],b[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 1.8, color, 5)
             dinero.append(dicc_clases[label])
+            print(labels_to_names[label],score)
         detected_img =cv2.cvtColor(draw, cv2.COLOR_RGB2BGR)
 
         image_name = "results_{}.jpg".format(uuid.uuid1())
