@@ -72,7 +72,7 @@ Ejemplo: si se especifica X=3, comenzará entrenando desde la época 4 (3+1). En
 
 ### Detección
 
-Antes de hacer detecciones, los pesos de entranamiento deben convertirse a pesos de inferencia utilizando el archivo convert_model.py en keras_retinanet/bin. Luego con el archivo .h5 generado se pueden hacer inferencias sobre una imagen utilizando el archivo detect.py. 
+Antes de hacer detecciones, los pesos de entranamiento deben convertirse a pesos de inferencia utilizando el archivo convert_model.py en keras_retinanet/bin. Luego con el archivo .h5 generado se pueden hacer inferencias sobre una imagen utilizando el archivo detect.py.
 
 Para establecer un umbral mínimo de puntaje en la detección, puede cambiarse la variable SCORE dentro del archivo detect.py.
 
