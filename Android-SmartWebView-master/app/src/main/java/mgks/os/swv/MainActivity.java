@@ -1,4 +1,4 @@
-	package mgks.os.swv;
+package mgks.os.swv;
 
 /*
  * Android Smart WebView is an Open Source Project available on GitHub (https://github.com/mgks/Android-SmartWebView).
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 	static boolean ASWP_CERT_VERIFICATION   = SmartWebView.ASWP_CERT_VERI;
 
 	// configuration variables
-	private static String ASWV_URL          = "http://192.168.0.18:5000/";//SmartWebView.ASWV_URL;
+	private static String ASWV_URL          = "http://192.168.1.98:5000/";//SmartWebView.ASWV_URL;
 	private String CURR_URL                 = ASWV_URL;
 	private static String ASWV_SEARCH       = SmartWebView.ASWV_SEARCH;
 	private static String ASWV_SHARE_URL    = SmartWebView.ASWV_SHARE_URL;
