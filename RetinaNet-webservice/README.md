@@ -68,4 +68,4 @@ Esto nos dará la dirección (IPv4) al servidor que nos ayudará a ejecutar la d
 
 # __Disfrutar de una increible detección de billetes__
 
-![Captura de el servidor web](/images_readme/flaskServiceResult.png)
+![Captura de el servidor web](/images_readme/retinanet1.jpg)
