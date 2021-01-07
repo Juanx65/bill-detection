@@ -34,7 +34,7 @@ En este Repositorio encontraras 2 formas de implementar una aplicación web y/o 
 
 ### Secciones
 
-Cada una de las siguientes secciones cuenta con su poropio README.md con instrucciones de uso, sindo todos independientes de los demas, exceptaundo la ejecucion de la aplicación movil que debe ser complementada con alguno de los servicios web.
+Cada una de las siguientes secciones cuenta con su poropio README.md con instrucciones de uso, siendo todos independientes de los demas, exceptuando la ejecucion de la aplicación móvil que debe ser complementada con alguno de los servicios web desarrollados.
 
 __Entrenamiento:__
 

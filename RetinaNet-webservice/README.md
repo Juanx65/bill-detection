@@ -27,13 +27,13 @@ pip install -r requirements.txt
 ```
 https://drive.google.com/drive/folders/11T2b6Pd0DrqtGXgqGF97kWR3wnLXEmNf?usp=sharing
 ```
-Donde debe descargar:
+De donde  debe descargar:
 
- inference_37.h5
+ inference_48.h5
 
 Agregamos este archivo a la carpeta models
 
-Notamos que es necesario cambiar este valor en commons.py en las lineas 59 y 65 dependiendo de el peso escogido de la siguente forma:
+En la __linea 74__ de el archivo __commons.py__ se debe cambiar el valor numérico previo a la extensión ***.h5*** por el valor numérico que se muestra en el nombre del peso que se vaya a utilizar (en este caso recomendamos utilizar el peso ***inference_48.h5*** por lo que ud deberá cambiar el valor de la linea por el numero ***48***) de la siguente forma:
 
 ![Captura de el servidor web](/images_readme/pesos_retina.png)
 

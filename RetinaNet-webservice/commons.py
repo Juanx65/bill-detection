@@ -111,12 +111,13 @@ def detection_on_image(img):
             box_w = x2 - x1
             box_h = y2 - y1
 
-            draw = cv2.rectangle(draw, (x1, y1 + box_h), (x2, y1), color, 5)
-            draw_box(draw, b, color=color)
-            cv2.putText(draw, labels_to_names[label] + "  "+  str(round(score,3)), (b[0],b[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 1.8, color, 5)
-            dinero.append(dicc_clases[label])
-            print(labels_to_names[label],score)
-        detected_img =cv2.cvtColor(draw, cv2.COLOR_RGB2BGR)
+            if box_h*box_w > 4100:
+                draw = cv2.rectangle(draw, (x1, y1 + box_h), (x2, y1), color, 5)
+                draw_box(draw, b, color=color)
+                cv2.putText(draw, labels_to_names[label] + "  "+  str(round(score,3)), (b[0],b[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 1.8, color, 5)
+                dinero.append(dicc_clases[label])
+                print(labels_to_names[label],score)
+                detected_img =cv2.cvtColor(draw, cv2.COLOR_RGB2BGR)
 
         image_name = "results_{}.jpg".format(uuid.uuid1())
         name = "static/"+ image_name
