@@ -23,10 +23,10 @@ def predict():
 		div_in = request.form['div_in']
 		div_out = request.form['out']
 		image = file.read()
-		#try:
-		result, cant_total = detection_on_image(image)
-		#except:
-		#	return render_template('handler.html',error = "Can't upload image" )
+		try:
+			result, cant_total = detection_on_image(image)
+		except:
+			return render_template('handler.html',error = "Can't upload image" )
 
 		cant_out = convertir_divisas(cant_total,div_in,div_out)
 
