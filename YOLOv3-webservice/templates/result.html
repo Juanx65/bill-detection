@@ -56,6 +56,7 @@
 
 	</style>
     <script src="https://kit.fontawesome.com/f0dfbd1425.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <h2>Conversor de divisas</h2>
@@ -67,12 +68,12 @@
         <div class="left">
             <div class="content">
                 <br>
-                <div class="caja">{{div_in}} {{cant_total}}</div>
+                <div class="caja" id="min">{{div_in}} {{cant_total}}</div>
             </div>
         </div>
         <div class="right">
             <div class="content">
-                <button>
+                <button id="btin">
                     <i class="fas fa-volume-up"></i>
                 </button>
             </div>
@@ -84,12 +85,12 @@
         <div class="left">
             <div class="content">
                 <br>
-                <div class="caja">{{div_out}} {{cant_out}}</div>
+                <div class="caja" id="mout">{{div_out}} {{cant_out}}</div>
             </div>
         </div>
         <div class="right">
             <div class="content">
-                <button>
+                <button id="btout">
                     <i class="fas fa-volume-up"></i>
                 </button>
             </div>
@@ -109,5 +110,6 @@
         <b>New capt</b>
     </a>
 
+<script src="script.js"></script>
 </body>
 </html>
