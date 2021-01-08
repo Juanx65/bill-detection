@@ -1,52 +1,19 @@
-## Sistema de reconocimiento, contabilización y conversión de unidades físicas monetarias para extranjeros a la divisa deseada
-04/01/2021
+# __App movil con reconocimiento de billetes!__
 
-Autores:
+###  Referencias:
 
-        Francisco Abusleme
-        Juan Aguilera
-        Rodrigo Graves
-        Ricardo Mardones
-        Loreto Romero
-
-### Referencias Globales:
-
-Repositorio usado para el entrenamiento con YOLOv3
-```
-https://github.com/puigalex/deteccion-objetos-video
-```
-Implementación RetinaNet
-```
-https://github.com/fizyr/keras-retinanet/
-```
-Guía para utitilizar la red para cualquier dataset
-```
-https://github.com/Samjith888/Keras-retinanet-Training-on-custom-datasets-for-Object-Detection-/
-```
 Implementación SmartWebView
 ```
 https://github.com/mgks/Android-SmartWebView
 ```
+Abrimos el proyecto en Android Studio y cambiamos en java/MainActivity la linea 128 por lo siguiente
+```
+private static String ASWV_URL          = "http://192.168.0.5:5000/";
+```
+Donde la direccion http://192.168.0.5:5000/ corresponde a la direccion del webservice creado anteriormente.
 
-### Preliminares
+Como se ve a continuacion
 
-En este Repositorio encontraras 2 formas de implementar una aplicación web y/o movil para el reconocimiento de billetes.
+![Captura de el servidor web](/images_readme/AppMovil.png)
 
-### Secciones
-
-Cada una de las siguientes secciones cuenta con su poropio README.md con instrucciones de uso, siendo todos independientes de los demas, exceptuando la ejecucion de la aplicación móvil que debe ser complementada con alguno de los servicios web desarrollados.
-
-__Entrenamiento:__
-
-    YOLOv3
-    RetinaNet
-
-__Flask Web Services:__
-
-    YOLOv3-webservice
-    RetinaNet-webservice
-
-__App Movil:__
-
-    Android-SmartWebView-master
-    foto_galeria
+Podemos implementar el uso de esta aplicación tanto para el servidor de RetinaNet como para el de YOLOv3.
