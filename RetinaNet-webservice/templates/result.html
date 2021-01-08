@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -19,7 +19,7 @@
             font-size: 18px;
             font-weight: 400;
             height: 25px;
-            width: 416px;
+            width: 350px;
             color: #000000;
             background: #dbdfe3
         }
@@ -35,20 +35,70 @@
             color: white;
             font-size: medium;
         }
+         .box {
+            overflow: hidden;
+        }
+
+        .content {
+            text-align: justify;
+        }
+
+        .left {
+            float: left;
+            width: 50%;
+        }
+
+        .right {
+            position: absolute;
+            left: 360px;
+        }
+
 
 	</style>
     <script src="https://kit.fontawesome.com/f0dfbd1425.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h2>Conversor de divisas</h2>
-    <img name="resultado" src="{{url_for('static', filename=result ) }}" width="416" height="416" />
-    <h3>La cantidad presente en la imagen es:</h3> <div class="caja">{{div_in}} {{cant_total}}</div>
-    <h3>En la divisa de salida seleccionada:</h3> <div class="caja">{{div_out}} {{cant_out}}</div>
-    
-   
 
-    <br> <br> <br>
-    
+    <img name="resultado" src="{{url_for('static', filename=result ) }}" width="416" height="416" />
+
+    <h3>La cantidad presente en la imagen es:</h3>
+    <div class="box">
+        <div class="left">
+            <div class="content">
+                <br>
+                <div class="caja">{{div_in}} {{cant_total}}</div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="content">
+                <button>
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <h3>En la divisa de salida seleccionada:</h3>
+    <div class="box">
+        <div class="left">
+            <div class="content">
+                <br>
+                <div class="caja">{{div_out}} {{cant_out}}</div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="content">
+                <button>
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+
     <button onclick="goBack()">
         <i class="fas fa-arrow-circle-left"></i>
     </button>
