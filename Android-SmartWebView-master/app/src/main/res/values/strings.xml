@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bill Detection App</string>
+    <string name="app_name">Currency Converter</string>
 	<string name="app_desc">A webview integrated w/ native features to help create most advanced hybrid applications.</string>
     <string name="image_view">Image View</string>
 	<string name="loading">Loading</string>

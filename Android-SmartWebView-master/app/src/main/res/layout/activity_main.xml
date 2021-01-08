@@ -27,6 +27,7 @@
 				android:layout_width="275dip"
 				android:layout_height="100dip"
 				android:src="@raw/front_splash"
+				android:background="#000000"
 				android:gravity="center_vertical|center_horizontal|center"
 				android:contentDescription="@string/image_view"
 				android:layout_gravity="top"
