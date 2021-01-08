@@ -33,7 +33,7 @@ De donde  debe descargar:
 
 Agregamos este archivo a la carpeta models
 
-En la __linea 74__ de el archivo __commons.py__ se debe cambiar el valor numérico previo a la extensión ***.h5*** por el valor numérico que se muestra en el nombre del peso que se vaya a utilizar (en este caso recomendamos utilizar el peso ***inference_48.h5*** por lo que ud deberá cambiar el valor de la linea por el numero ***48***) de la siguente forma:
+En la __linea 74__ de el archivo __commons.py__ se debe igualar la variable __model_path__ por el path absoluto que dirije al peso que se desea cargar al modelo, en el caso de la imagen de ejemplo  se carga el peso ***inference_37*** en el equipo de ricardo por lo que se utiliza el path de su equipo hasta el peso mencionado.
 
 ![Captura de el servidor web](/images_readme/pesos_retina.png)
 
@@ -60,12 +60,25 @@ cat /etc/resolv.conf
 Esto nos dará la dirección (IPv4) al servidor que nos ayudará a ejecutar la detección de billetes.
 
 
+
+
+##### Conectarse al servidor y cargar archivo
+
+
+
+Para acceder al webservice se deberá hacer uso de la url desde nuestro navegador preferido, desde un computador o algun dispositivo movil con la url:
+```
+<IPv4>:5000
+```
+donde <IPv4> corresponde a la dirección que se extrajo anteriormente.
+
 ![Captura de el servidor web](/images_readme/flaskservice.png)
 
-##### Nos conectamos desde el navegador webpreferido, ya sea en un computador o dispositivo movil y seleccionar un archivo deseado, luego hacemos click en upload para cargarlo al servidor.
+Damos click en el __primer__  botón __choose File__  y seleccionamos un archivo de nuestra galería o bien hacemos click en el __segundo__ boton de __choose File__ para cargar una foto tomada directamente con la camara si es que el dispositivo la tiene.
 
 
 
-# __Disfrutar de una increible detección de billetes__
+
+# __Disfrutar de una (aun mejorable) detección de billetes__
 
 ![Captura de el servidor web](/images_readme/retinanet1.jpg)
