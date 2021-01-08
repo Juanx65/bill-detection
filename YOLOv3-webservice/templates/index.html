@@ -33,7 +33,7 @@
         .menu-container {
             position: absolute;
             top: 6%;
-            right: 10%;
+			left: 380px;
             display: flex;
 			width: auto;
 			align-items: center;
@@ -41,7 +41,7 @@
         }
         .button {
             position: relative;
-            background: #000000;
+            background: transparent;
             font-size: 50px;
             border-radius: 100px;
             color: white;
@@ -111,6 +111,25 @@
 			font-size: 40px;
 			cursor: pointer;
 		}
+
+        .box {
+            overflow: hidden;
+        }
+
+        .content {
+            text-align: justify;
+        }
+
+        .left {
+            float: left;
+            width: 50%;
+        }
+
+        .right {
+            position: absolute;
+            left: 300px;
+        }
+
 	</style>
 	<script src="https://kit.fontawesome.com/f0dfbd1425.js" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -122,34 +141,33 @@
 	<!--
 	<a href="#" class="button2"> Galeria</a>
 	-->
-
 	<div class="menu-container">
 		<div class="button">
 			<span class="fas fa-bars"></span>
 		</div>
 		<nav>
-		<ul>
-			<li><a href="/" class="active">Home</a></li>
-			<li><a href="aboutapp.html">About the App</a></li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
+			<ul>
+				<li><a href="/" class="active">Home</a></li>
+				<li><a href="aboutapp.html">About the App</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
 		</nav>
 	</div>
 	<script>
 		$(document).ready(function(){
-			$('.button').click(function(){
-				if($(this).hasClass('expand')){
-					$('ul').slideUp(function(){
-						$('.button').removeClass('expand');
-					});
-				}else{
-					$(this).addClass('expand');
-					setTimeout(function(){
-						$('.fas').addClass('expand');
-						$('ul').stop().slideDown();
-					},200);
-				}
-			});
+		$('.button').click(function(){
+		if($(this).hasClass('expand')){
+		$('ul').slideUp(function(){
+		$('.button').removeClass('expand');
+		});
+		}else{
+		$(this).addClass('expand');
+		setTimeout(function(){
+		$('.fas').addClass('expand');
+		$('ul').stop().slideDown();
+		},200);
+		}
+		});
 		});
 	</script>
 
@@ -178,36 +196,49 @@
 			</label>
 		</div>
 
-		<br> <br>
-
-		<label for="div_in"> <b> Divisa Entrada</b> </label>
-		<select name="div_in" id="div_in">
-			<option value="CLP"> CLP</option>
-			<option value="USD"> USD </option>
-			<option value="EUR"> EUR</option>
-			<option value="CNY"> CNY</option>
-		</select>
-
-		<br> <br>
-
-		<label for="out"> <b> Divisa Salida</b> </label>
-		<select name="out" id="out">
-			<option value="CLP"> CLP</option>
-			<option value="USD"> USD </option>
-			<option value="EUR"> EUR</option>
-			<option value="CNY"> CNY</option>
-		</select>
-
-		<br> <br> <br />
-
-		<button type="submit" value="Upload">
-			<i class="fas fa-arrow-circle-right"></i>
-		</button>
-
 		<br>
-		<a class="letra">
-			<b>Continue</b>
-		</a>
+
+		<div class="box">
+			<div class="left">
+				<div class="content">
+					<br>
+					<label for="div_in"> <b> Divisa Entrada</b> </label>
+					<select name="div_in" id="div_in">
+						<option value="CLP"> CLP</option>
+						<option value="USD"> USD </option>
+						<option value="EUR"> EUR</option>
+						<option value="CNY"> CNY</option>
+					</select>
+
+					<br> <br>
+
+					<label for="out"> <b> Divisa Salida &nbsp;</b> </label>
+					<select name="out" id="out">
+						<option value="CLP"> CLP</option>
+						<option value="USD"> USD </option>
+						<option value="EUR"> EUR</option>
+						<option value="CNY"> CNY</option>
+					</select>
+
+					<br>
+				</div>
+			</div>
+			<div class="right">
+				<div class="content">
+
+					<button type="submit" value="Upload">
+						<i class="fas fa-arrow-circle-right"></i>
+					</button>
+
+					<br>
+					<a class="letra">
+						<b>Continue</b>
+					</a>
+				</div>
+			</div>
+		</div>
+
+
 
 	</form>
 
